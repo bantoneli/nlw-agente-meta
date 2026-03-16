@@ -1,42 +1,41 @@
-const apiKeyInput = document.getElementById('apiKey')
-const gameSelect = document.getElementById('gameSelect')
-const questionInput = document.getElementById('questionInput')
-const askButton = document.getElementById('askButton')
-const aiResponse = document.getElementById('aiResponse')
-const form = document.getElementById('form')
+const apiKeyInput = document.getElementById("apiKey")
+const gameSelect = document.getElementById("gameSelect")
+const questionInput = document.getElementById("questionInput")
+const askButton = document.getElementById("askButton")
+const aiResponse = document.getElementById("aiResponse")
+const form = document.getElementById("form")
 
 const markdownToHTML = (text) => {
-    const converter = new showdown.Converter()
-    return converter.makeHtml(text)
+  const converter = new showdown.Converter()
+  return converter.makeHtml(text)
 }
 
 // Carrega o tema salvo ou usa o padrão (escuro)
 function loadTheme() {
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme === 'light') {
-        document.documentElement.classList.add('lightMode')
-    }
+  const savedTheme = localStorage.getItem("theme")
+  if (savedTheme === "light") {
+    document.documentElement.classList.add("lightMode")
+  }
 }
 
 // Salva o tema atual
 function saveTheme() {
-    const isLightMode = document.documentElement.classList.contains('lightMode')
-    localStorage.setItem('theme', isLightMode ? 'light' : 'dark')
+  const isLightMode = document.documentElement.classList.contains("lightMode")
+  localStorage.setItem("theme", isLightMode ? "light" : "dark")
 }
 
 // Alterna entre temas
 function toggleTheme() {
-    const html = document.documentElement
-    html.classList.toggle('lightMode')
-    saveTheme()
+  const html = document.documentElement
+  html.classList.toggle("lightMode")
+  saveTheme()
 }
 
-// Chave API: AIzaSyDLR9nvTCrfAK0lGdVFHiYOeAFNWa5cK4M
 const askAi = async (question, game, apiKey) => {
-    const model = "gemini-2.5-flash"
-    const geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`
-    
-    const questionFortnite = `
+  const model = "gemini-2.5-flash"
+  const geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`
+
+  const questionFortnite = `
     ## Especialidade
     Você é um assistente especializado em Fortnite, com profundo conhecimento sobre estratégias, rotações, armas e builds com base no **patch mais recente**. 
     
@@ -78,7 +77,7 @@ const askAi = async (question, game, apiKey) => {
     Aqui está a pergunta do usuário: ${question}
     `
 
-    const questionLol = `
+  const questionLol = `
     ## Especialidade
     Você é um especialista em League of Legends, com conhecimento profundo sobre o **meta atual**, **patches recentes**, **melhores builds** e **estratégias por função e campeão**.
     
@@ -121,7 +120,7 @@ const askAi = async (question, game, apiKey) => {
     Aqui está a pergunta do usuário: ${question}
     `
 
-    const questionValorant = `
+  const questionValorant = `
     ## Especialidade
     Você é um assistente especialista em Valorant, com conhecimento atualizado sobre **agentes**, **armas**, **mapas**, **composições de time** e **metas táticos atuais**. 
     
@@ -162,7 +161,7 @@ const askAi = async (question, game, apiKey) => {
     Aqui está a pergunta do usuário: ${question}
     `
 
-    const questionWildrift = `
+  const questionWildrift = `
     ## Especialidade
     Você é um assistente especializado em Wild Rift, com profundo conhecimento do jogo adaptado para dispositivos móveis. 
     
@@ -203,72 +202,79 @@ const askAi = async (question, game, apiKey) => {
 
     Aqui está a pergunta do usuário: ${question}
     `
-    
-    let prompt = ''
 
-    if (game == 'fortnite') {
-        prompt = questionFortnite
-    } else if (game == 'lol') {
-        prompt = questionLol
-    } else if (game == 'valorant') {
-        prompt = questionValorant
-    } else if (game == 'wildrift') {
-        prompt = questionWildrift
-    }
+  let prompt = ""
 
-    const contents = [{
-        role: "user",
-        parts: [{
-            text: prompt
-        }]
-    }]
+  if (game == "fortnite") {
+    prompt = questionFortnite
+  } else if (game == "lol") {
+    prompt = questionLol
+  } else if (game == "valorant") {
+    prompt = questionValorant
+  } else if (game == "wildrift") {
+    prompt = questionWildrift
+  }
 
-    const tools = [{
-        google_search: {}
-    }]
-
-    // Chamada API
-    const response = await fetch(geminiURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
+  const contents = [
+    {
+      role: "user",
+      parts: [
+        {
+          text: prompt,
         },
-        body: JSON.stringify({
-            contents,
-            tools
-        })
-    })
+      ],
+    },
+  ]
 
-    const data = await response.json()
-    return data.candidates[0].content.parts[0].text
+  const tools = [
+    {
+      google_search: {},
+    },
+  ]
+
+  // Chamada API
+  const response = await fetch(geminiURL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      contents,
+      tools,
+    }),
+  })
+
+  const data = await response.json()
+  return data.candidates[0].content.parts[0].text
 }
 
 const sendForm = async (event) => {
-    event.preventDefault()
-    const apiKey = apiKeyInput.value
-    const game = gameSelect.value
-    const question = questionInput.value
+  event.preventDefault()
+  const apiKey = apiKeyInput.value
+  const game = gameSelect.value
+  const question = questionInput.value
 
-    if (apiKey == '' || game == '' || question == '') {
-        alert('Por favor, preencha todos os campos')
-        return
-    }
+  if (apiKey == "" || game == "" || question == "") {
+    alert("Por favor, preencha todos os campos")
+    return
+  }
 
-    askButton.disabled = true
-    askButton.textContent = 'Perguntando...'
-    askButton.classList.add('loading')
+  askButton.disabled = true
+  askButton.textContent = "Perguntando..."
+  askButton.classList.add("loading")
 
-    try {
-        const text = await askAi(question, game, apiKey)
-        aiResponse.querySelector('.response-content').innerHTML = markdownToHTML(text)
-        aiResponse.classList.remove('hidden')
-    } catch (error) {
-        console.log('Erro: ', error)
-    } finally {
-        askButton.disabled = false
-        askButton.textContent = "Perguntar"
-        askButton.classList.remove('loading')
-    }
+  try {
+    const text = await askAi(question, game, apiKey)
+    aiResponse.querySelector(".response-content").innerHTML =
+      markdownToHTML(text)
+    aiResponse.classList.remove("hidden")
+  } catch (error) {
+    console.log("Erro: ", error)
+  } finally {
+    askButton.disabled = false
+    askButton.textContent = "Perguntar"
+    askButton.classList.remove("loading")
+  }
 }
 
-form.addEventListener('submit', sendForm)
+form.addEventListener("submit", sendForm)
