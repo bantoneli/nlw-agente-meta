@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser", // Ensina o ESLint a ler TS
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint" // Adiciona as regras do TS
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended", // Liga as regras recomendadas do TS
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-unused-vars": "off", // Desliga a regra padrão de JS (causa conflitos com TS)
+    "@typescript-eslint/no-unused-vars": "warn", // Usa a regra inteligente do TS
+    "@typescript-eslint/no-explicit-any": "warn" // Avisa se você usar "any"
+  }
+}

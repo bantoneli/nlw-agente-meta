@@ -1,0 +1,17 @@
+# Dependências
+node_modules/
+
+# Código compilado
+dist/
+build/
+out/
+
+# Relatórios de testes
+coverage/
+
+# Arquivos que não devem ter sua formatação tocada pelo Prettier
+package-lock.json
+yarn.lock
+
+# Arquivos de sistema
+.DS_Store

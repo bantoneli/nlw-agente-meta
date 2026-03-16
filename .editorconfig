@@ -1,0 +1,16 @@
+# Informa aos editores que este é o arquivo raiz (não procure em pastas acima)
+root = true
+
+[*]
+# Padrão universal de codificação
+charset = utf-8
+# Usa espaços em vez de tabs
+indent_style = space
+# Tamanho do recuo (alinha com suas configurações do VS Code)
+indent_size = 2
+# Estilo de quebra de linha padrão do Unix (evita problemas entre Windows/Mac/Linux)
+end_of_line = lf
+# Remove espaços em branco sobrando no fim das linhas
+trim_trailing_whitespace = true
+# Garante uma linha vazia no final de cada arquivo
+insert_final_newline = true

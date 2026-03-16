@@ -1,0 +1,10 @@
+# Dependências
+node_modules/
+
+# Código compilado
+dist/
+build/
+out/
+
+# Relatórios de testes
+coverage/

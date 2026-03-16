@@ -1,0 +1,26 @@
+# Dependências
+node_modules/
+
+# Pastas de build / produção (ajuste conforme a sua ferramenta: Vite, Webpack, etc.)
+dist/
+build/
+out/
+
+# Arquivos de ambiente (NUNCA suba senhas ou chaves de API)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de sistema operacional (Mac/Windows)
+.DS_Store
+Thumbs.db
+
+# Relatórios de cobertura de testes
+coverage/
