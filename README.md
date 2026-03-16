@@ -1,136 +1,69 @@
-# HTML
+# NLW 20 • Agents
 
-- HypertText
-  - Textos puros, livros, revistas, jornais
-  - Links: acessar outros documentos
-  - Imagens, vídeos, áudios
-- Markup
-  - Marcação
-  - Tags: <a> Link </a>
-  - Atributos: <a href="https://rocketseat.com.br">
-  - Globais: id, class, etc
-- Language
-  - Linguagem
-  - Sintaxe: maneira de escrever
+![GitHub repo size](https://img.shields.io/github/repo-size/bantoneli/nlw-agente-meta)
+![GitHub language count](https://img.shields.io/github/languages/count/bantoneli/nlw-agente-meta)
+![GitHub last commit](https://img.shields.io/github/last-commit/bantoneli/nlw-agente-meta)
 
+Projeto desenvolvido durante o **NLW 20 - Agents**, evento da Rocketseat focado na construção de aplicações modernas utilizando agentes inteligentes e ferramentas atuais do ecossistema JavaScript.
 
-# HTTP
+---
 
-- HyperText
-- Transfer
-  - Transferência
-- Protocol
-  - Protocolo
-  - Conjunto de regras
-- Methods HTTP (Verbos): GET, POST, PUT, DELETE
-- Headers (Cabeçalhos): Instruções/Informações extras para cada chamada
+## 🖥 Preview
 
-# URL
+![Preview da aplicação](.github/preview.png)
 
-- Uniform
-  - Uniforme
-- Resource
-  - Recurso
-- Locator
-  - Localizador
-    Encontrar um recurso (html, css, js, pdf, jpg, mp3, mp4, etc)
-    Endereço
+---
 
-# IP
+## 📌 Sobre o projeto
 
-- Internet
-  - Rede mundial de computadores
-- Protocol
-  - Conjunto de regras
-    Endereço do computador:
-    rocketseat.com.br (Domínio)
-    123.32.1.23 (IP)
+Este projeto foi desenvolvido durante a **Next Level Week 20**, evento promovido pela Rocketseat.
 
-# DNS
+A proposta é construir uma aplicação utilizando conceitos modernos de desenvolvimento, explorando:
 
-- Domain
-  - Domínio
-- Name
-  - Nome
-- Server ou System
-  - Servidor ou Sistema
+- Estruturação de projetos
+- Integração com APIs
+- Organização de código
+- Boas práticas de desenvolvimento
 
-# CSS
+O projeto serve como base de aprendizado e prática para construção de aplicações com agentes.
 
-- Cascading
-  - Cascata
-    - Regras das escritas
-    - Hierarquia
-    - Especificidade
-- Style
-  - Estilo
-- Sheet
-  - Folha
+---
 
-Arquivo que terá na sua sintaxe: declarações, propriedades e valores. A partir disso, o HTML é impactado visualmente.
+## 🚀 Tecnologias utilizadas
 
-- Declaração
-- Seletor
-- Propriedade e valor
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-# JS
+- JavaScript
+- Node.js
+- HTML
+- CSS
+- APIs externas
+- Git
+- GitHub
 
-- Linguagem de programação
-- Browsers
-- Input -> Process -> Output
-- Variáveis
-- Function:
-  - Agrupamento e reuso de código
-  - Sequencia lógica
-  - Saída
-- Gemini (IA): esperar uma resposta
-- Mexer no navegador
-- Estrutura de dados
-- Estrutura de decisão
-- Algoritmo: sequencia de passos lógica, de maneira ordenada, a fim de chegar a alguma conclusão (limitada)
-- Lógica (Pensamento Computacional):
-  - Abstração
-  - Decomposição
-  - Algoritmo
-  - Reconhecimento de padrão
-- Tipos de dados:
-  - Number (Números)
-  - String (Textos) (" ", ' ', ` `)
-  - Boolean: true ou false
-  - Objetos
+---
 
-# DOM
+## 🎯 Aprendizados
 
-- Document
-- Object
-- Model
+Durante o desenvolvimento deste projeto foram praticados conceitos como:
 
-# API
+- Estruturação de projetos modernos
+- Organização de código
+- Consumo de APIs
+- Boas práticas de desenvolvimento
+- Versionamento de código com Git
 
-- Application
-- Programming
-- Interface
-- JSON (JavaScript Object Notation) é a linguagem utilizada para envio e recebimento de informações dentro da API
+---
 
-# CDN
+## 📚 Créditos
 
-- Content
-- Delivery
-- Network
+Projeto desenvolvido durante o **NLW 20 - Agents** da Rocketseat.
 
-# LLM
+---
 
-- Large
-- Language
-- Model
+## 👨‍💻 Autor
 
-# Agentes AI
+**Bruno Antoneli**
 
-- Tools (Ferramentas): permitem uso de código, ou apps, ou qualquer informação extra.
-- Melhor contexto
-
-# Engenharia de Prompt
-
-- One shot: uma única pergunta sem muito contexto
-- Few shot: é apresentado exemplos do que se espera
-- Chain of Thought: Cadeia de pensamento para a IA responder gradativamente conforme a instrução.
+GitHub  
+https://github.com/bantoneli
