@@ -1,76 +1,136 @@
-# 🚀 Template: Setup Front-End (JS/TS)
+# HTML
 
-Este é um template de configuração de ambiente focado em produtividade, padronização e qualidade de código para projetos Front-End.
+- HypertText
+  - Textos puros, livros, revistas, jornais
+  - Links: acessar outros documentos
+  - Imagens, vídeos, áudios
+- Markup
+  - Marcação
+  - Tags: <a> Link </a>
+  - Atributos: <a href="https://rocketseat.com.br">
+  - Globais: id, class, etc
+- Language
+  - Linguagem
+  - Sintaxe: maneira de escrever
 
-Ele já vem pré-configurado com melhores práticas para garantir que o código seja formatado automaticamente, analisado contra más práticas e bloqueado de subir para o repositório se contiver erros.
 
-## 🛠️ Ferramentas Inclusas
+# HTTP
 
-- **[TypeScript](https://www.typescriptlang.org/):** Tipagem estática rigorosa para evitar erros em tempo de execução.
-- **[ESLint](https://eslint.org/):** Linter configurado para identificar problemas de sintaxe e más práticas.
-- **[Prettier](https://prettier.io/):** Formatador de código opinativo para garantir um estilo visual único.
-- **[EditorConfig](https://editorconfig.org/):** Mantém a consistência de estilos de codificação entre diferentes editores.
-- **[Husky](https://typicode.github.io/husky/):** Gerenciador de Git Hooks para interceptar commits.
-- **[lint-staged](https://github.com/okonet/lint-staged):** Executa o linter apenas nos arquivos modificados no "stage".
+- HyperText
+- Transfer
+  - Transferência
+- Protocol
+  - Protocolo
+  - Conjunto de regras
+- Methods HTTP (Verbos): GET, POST, PUT, DELETE
+- Headers (Cabeçalhos): Instruções/Informações extras para cada chamada
 
----
+# URL
 
-## ⚙️ Pré-requisitos
+- Uniform
+  - Uniforme
+- Resource
+  - Recurso
+- Locator
+  - Localizador
+    Encontrar um recurso (html, css, js, pdf, jpg, mp3, mp4, etc)
+    Endereço
 
-Certifique-se de ter o Node.js instalado em sua máquina (recomenda-se a versão LTS).
+# IP
 
----
+- Internet
+  - Rede mundial de computadores
+- Protocol
+  - Conjunto de regras
+    Endereço do computador:
+    rocketseat.com.br (Domínio)
+    123.32.1.23 (IP)
 
-## 🚀 Como Começar
+# DNS
 
-1. **Clone este repositório** (ou use-o como template no GitHub):
+- Domain
+  - Domínio
+- Name
+  - Nome
+- Server ou System
+  - Servidor ou Sistema
 
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+# CSS
 
-2. **Instale as dependências:**
+- Cascading
+  - Cascata
+    - Regras das escritas
+    - Hierarquia
+    - Especificidade
+- Style
+  - Estilo
+- Sheet
+  - Folha
 
-   npm install
+Arquivo que terá na sua sintaxe: declarações, propriedades e valores. A partir disso, o HTML é impactado visualmente.
 
-3. **Inicialize os hooks do Git (Husky):**
+- Declaração
+- Seletor
+- Propriedade e valor
 
-   npm run prepare
+# JS
 
-4. **Abra no Visual Studio Code:**
+- Linguagem de programação
+- Browsers
+- Input -> Process -> Output
+- Variáveis
+- Function:
+  - Agrupamento e reuso de código
+  - Sequencia lógica
+  - Saída
+- Gemini (IA): esperar uma resposta
+- Mexer no navegador
+- Estrutura de dados
+- Estrutura de decisão
+- Algoritmo: sequencia de passos lógica, de maneira ordenada, a fim de chegar a alguma conclusão (limitada)
+- Lógica (Pensamento Computacional):
+  - Abstração
+  - Decomposição
+  - Algoritmo
+  - Reconhecimento de padrão
+- Tipos de dados:
+  - Number (Números)
+  - String (Textos) (" ", ' ', ` `)
+  - Boolean: true ou false
+  - Objetos
 
-   code .
+# DOM
 
----
+- Document
+- Object
+- Model
 
-## 📂 Estrutura de Diretórios
+# API
 
-    ├── .husky/                 # Configurações e scripts dos Git Hooks
-    ├── .vscode/                # Configurações específicas para o Visual Studio Code
-    ├── .editorconfig           # Regras globais de formatação para a IDE
-    ├── .eslintignore           # Arquivos/pastas ignorados pelo ESLint
-    ├── .eslintrc.json          # Regras do ESLint e integração com TS/Prettier
-    ├── .gitignore              # Arquivos ignorados pelo Git
-    ├── .prettierignore         # Arquivos ignorados pelo Prettier
-    ├── .prettierrc             # Regras de formatação estéticas
-    ├── package.json            # Dependências e scripts do projeto
-    └── tsconfig.json           # Configurações do compilador TypeScript
+- Application
+- Programming
+- Interface
+- JSON (JavaScript Object Notation) é a linguagem utilizada para envio e recebimento de informações dentro da API
 
----
+# CDN
 
-## 📜 Scripts Disponíveis
+- Content
+- Delivery
+- Network
 
-- **npm run lint**: Varre todo o projeto em busca de erros lógicos ou de sintaxe.
-- **npm run format**: Força a formatação de todos os arquivos suportados pelo Prettier.
-- **npm run prepare**: Registra os hooks do Husky localmente.
+# LLM
 
----
+- Large
+- Language
+- Model
 
-## 🛡️ Como o fluxo de Commit funciona?
+# Agentes AI
 
-Para manter o repositório limpo, este projeto utiliza o padrão de **Pre-commit Hook**.
+- Tools (Ferramentas): permitem uso de código, ou apps, ou qualquer informação extra.
+- Melhor contexto
 
-Toda vez que você rodar um `git commit`, o Husky vai interceptar a ação e acionar o `lint-staged`. Ele fará o seguinte automaticamente:
+# Engenharia de Prompt
 
-1. Rodar o **ESLint** tentando corrigir problemas simples automaticamente.
-2. Rodar o **Prettier** para formatar o código que está sendo commitado.
-3. Se o ESLint encontrar um erro grave que não possa ser corrigido de forma automática, o commit será bloqueado até que você corrija o código manualmente.
+- One shot: uma única pergunta sem muito contexto
+- Few shot: é apresentado exemplos do que se espera
+- Chain of Thought: Cadeia de pensamento para a IA responder gradativamente conforme a instrução.

@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color: white;
+    --body-bg-color: #121214;
+    --body-bg-image: url(./assets/bg_dark.jpg);
+    --section-gradient: linear-gradient(90deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%);
+    --section-inner-bg: #2A2634;
+    --input-bg-color: #00000066;
+    --button-gradient: linear-gradient(245deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%);
+    --toggle-switch-url: url(./assets/moon-stars.svg);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.lightMode {
+    --color: #2F2F2F;
+    --body-bg-color: #F8F9FF;
+    --body-bg-image: url(./assets/bg_light.jpg);
+    --section-gradient: linear-gradient(90deg, #D0B8FF 0%, #A8F5D3 50%, #FFF6C0 100%);
+    --section-inner-bg: #F0F1FA;
+    --input-bg-color: #9E9EAE66;
+    --button-gradient: linear-gradient(240deg, #D0B8FF 0%, #A8F5D3 50%, #FFF6C0 100%);
+    --toggle-switch-url: url(./assets/sun.svg);
+    --surface-color: rgba(0, 0, 0, 0.1);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --highlight-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-image: var(--body-bg-image);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+    background-color: var(--body-bg-color);
+    color: var(--color);
+    transition: background-color 0.3s ease;
+}
+
+body * {
+    font-family: "Inter";
+    line-height: 160%;
+}
+
+header {
+    padding-top: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+header img {
+    width: 15rem;
+}
+
+#switch {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 64px;
+    cursor: pointer;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--toggle-switch-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: left 0.5s ease;
+    cursor: pointer;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+
+.lightMode #switch button {
+    left: 50%;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+main {
+    max-width: 36rem;
+    width: 90%;
+    margin: 3rem auto;
+}
+
+section {
+    background-image: var(--section-gradient);
+    border-radius: 0.6rem;
+    padding-top: 5px;
+}
+
+section > div {
+    padding: 2rem;
+    padding-top: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--section-inner-bg);
+}
+
+section h2 {
+    letter-spacing: -0.47px;
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: var(--color);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin: 1.25rem 0;
+}
+
+input, select {
+    all: unset;
+    border: 2px solid #9147FF;
+    border-radius: 0.5rem;
+    padding: 0.675rem;
+    font-size: 0.875rem;
+    background-color: var(--input-bg-color);
+}
+
+input {
+    flex: 1;
+}
+
+#askButton {
+    width: 100%;
+    border: 0;
+    background-image: var(--button-gradient);
+    padding: 0.675rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.12px;
+    color: black;
+    transition: all 0.3s;
+}
+
+#askButton:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 1rem rgba(255, 248, 107, 0.2);
+}
+
+#askButton:disabled {
+    transition: initial;
+    transform: initial;
+    box-shadow: initial;
+    cursor: not-allowed;
+    color: black;
+}
+
+#aiResponse {
+    background: var(--input-bg-color);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    border-left: 4px solid #43E7AD;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animações */
+main section {
+    opacity: 0;
+    transform: translateY(2rem);
+
+    animation-name: appear;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loading {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes slide-on {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-off {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
+}
